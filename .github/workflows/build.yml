@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   build:
-    # runs-on: ubuntu-latest
     runs-on: ubuntu-24.04
 
     steps:
@@ -25,16 +24,7 @@ jobs:
       - name: Use build script
         run: |
           cd tools/
-          ./build.sh
-
-      # - name: Build the .deb package
-      #   run: |
-      #     dpkg-buildpackage -us -uc -b
-
-      # - name: Move .deb files into workspace
-      #   run: |
-      #     mkdir -p build-artifacts
-      #     mv ../*.deb build-artifacts/
+          sudo ./build.sh
 
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
