@@ -1,11 +1,11 @@
 Source: hello-debian
 Section: utils
 Priority: extra
-Maintainer: Full Name <yourname@example.com>
+Maintainer: Matthew Elgert <mdelgert@yahoo.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
-Vcs-Git: git@github.com:streadway/hello-debian.git
-Vcs-Browser: http://github.com/streadway/hello-debian
+Vcs-Git: git@github.com:mdelgert/hello-debian.git
+Vcs-Browser: http://github.com/mdelgert/hello-debian
 
 Package: hello-debian
 Section: utils
