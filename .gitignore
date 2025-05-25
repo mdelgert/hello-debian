@@ -1,5 +1,4 @@
 build-artifacts
 .debhelper
 files
-hello-world
 hello-debian*
