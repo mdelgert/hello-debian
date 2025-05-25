@@ -12,8 +12,8 @@ mkdir -p build-artifacts
 # Remove old artifacts from parent dir
 rm -f ../*.deb ../*.changes ../*.build ../*.buildinfo ../*.dsc ../*.tar.*
 
-# Build, automatically answer 'y' to 'continue anyway?' prompt
-yes | dpkg-buildpackage -us -uc -b
+# Build the package
+dpkg-buildpackage -us -uc -b
 
 # Move new artifacts to build-artifacts/
 mv ../hello-debian* build-artifacts/ 2>/dev/null
