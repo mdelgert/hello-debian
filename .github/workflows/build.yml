@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 'v*.*.*'
-    # branches: [main]
 
 jobs:
   build:
@@ -28,3 +27,12 @@ jobs:
         with:
           name: hello-debian
           path: ../*.deb
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build-artifacts/*.deb
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

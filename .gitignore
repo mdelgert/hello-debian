@@ -1,0 +1,6 @@
+.debhelper
+hello-world
+hello-debian
+files
+hello-debian.debhelper.log
+hello-debian.substvars
