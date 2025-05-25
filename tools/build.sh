@@ -7,7 +7,6 @@ cd ../
 
 # Clean up previous artifacts
 rm -rf build-artifacts
-mkdir -p build-artifacts
 
 # Remove old artifacts from parent dir
 rm -f ../*.deb ../*.changes ../*.build ../*.buildinfo ../*.dsc ../*.tar.*
@@ -16,10 +15,15 @@ rm -f ../*.deb ../*.changes ../*.build ../*.buildinfo ../*.dsc ../*.tar.*
 dpkg-buildpackage -us -uc -b
 
 # Move new artifacts to build-artifacts/
-mv ../hello-debian* build-artifacts/ 2>/dev/null
+mkdir -p build-artifacts
 mv ../*.deb build-artifacts/ 2>/dev/null
 mv ../*.changes build-artifacts/ 2>/dev/null
 mv ../*.build build-artifacts/ 2>/dev/null
 mv ../*.buildinfo build-artifacts/ 2>/dev/null
 mv ../*.dsc build-artifacts/ 2>/dev/null
 mv ../*.tar.* build-artifacts/ 2>/dev/null
+
+# Delete old artifacts
+# rm ../*.ddeb build-artifacts/ 2>/dev/null
+# rm ../*.buildinfo build-artifacts/ 2>/dev/null
+# rm ../*.changes build-artifacts/ 2>/dev/null
