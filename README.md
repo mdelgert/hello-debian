@@ -1,5 +1,13 @@
 # hello-debian
 
+"postCreateCommand": "apt-get update && apt-get install -y build-essential debhelper lintian git gdb devscripts fakeroot"
+
+"postCreateCommand": "apt-get update && apt-get install -y devscripts build-essential debhelper fakeroot git",
+
+"postCreateCommand": "export DEBIAN_FRONTEND=noninteractive && ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && apt-get update && apt-get install -y tzdata devscripts build-essential debhelper fakeroot && dpkg-reconfigure --frontend noninteractive tzdata",
+
+"postCreateCommand": "/workspace/.devcontainer/setup.sh",
+
 A tutorial for repository management of debian packages.  This project installs
 `hello-world`, compiled from 'hello.c' into `/usr/bin`.
 

@@ -1,0 +1,30 @@
+{
+  "name": "Ubuntu 24.04 Dev Container",
+
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  // "postCreateCommand": ".devcontainer/post-create.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.remote-containers",
+        "EditorConfig.EditorConfig",
+        "github.copilot",
+        "github.copilot-chat"
+      ]
+    }
+  }
+
+  // "remoteUser": "vscode"
+}
