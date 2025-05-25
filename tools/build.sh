@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ../
+
 # This script builds the package using debuild
 # and moves all build artifacts to ./build-artifacts
 
