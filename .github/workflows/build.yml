@@ -30,10 +30,10 @@ jobs:
       #   run: |
       #     dpkg-buildpackage -us -uc -b
 
-      - name: Move .deb files into workspace
-        run: |
-          mkdir -p build-artifacts
-          mv ../*.deb build-artifacts/
+      # - name: Move .deb files into workspace
+      #   run: |
+      #     mkdir -p build-artifacts
+      #     mv ../*.deb build-artifacts/
 
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
