@@ -23,7 +23,7 @@ jobs:
           dpkg-buildpackage -us -uc -b
 
       - name: Upload .deb artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hello-debian
           path: ../*.deb
