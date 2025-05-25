@@ -11,6 +11,6 @@ RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Create vscode user with passwordless sudo
-RUN useradd -m vscode && \
-    echo 'vscode ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/vscode && \
-    chmod 0440 /etc/sudoers.d/vscode
+# RUN useradd -m vscode && \
+#     echo 'vscode ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/vscode && \
+#     chmod 0440 /etc/sudoers.d/vscode

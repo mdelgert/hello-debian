@@ -1,9 +1,10 @@
 {
   "name": "Ubuntu 24.04 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
 
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  // "build": {
+  //   "dockerfile": "Dockerfile"
+  // },
   
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
@@ -24,7 +25,7 @@
         "github.copilot-chat"
       ]
     }
-  }
+  },
 
-  // "remoteUser": "vscode"
+  "remoteUser": "vscode"
 }
