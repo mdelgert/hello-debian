@@ -3,28 +3,27 @@ name: Build Debian Package
 on:
   push:
     branches: [main]
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up package directory
+      - name: Install build tools
         run: |
-          mkdir -p package/usr/local/bin
-          mkdir -p package/DEBIAN
-          cp hello.sh package/usr/local/bin/hello
-          chmod 755 package/usr/local/bin/hello
-          cp debian/control package/DEBIAN/control
+          sudo apt update
+          sudo apt install -y devscripts build-essential debhelper fakeroot
 
-      - name: Build .deb package
-        run: dpkg-deb --build package hello-deb_1.0_all.deb
+      - name: Build the .deb package
+        run: |
+          dpkg-buildpackage -us -uc -b
 
-      - name: Upload artifact
+      - name: Upload .deb artifact
         uses: actions/upload-artifact@v3
         with:
-          name: hello-deb
-          path: hello-deb_1.0_all.deb
+          name: hello-debian
+          path: ../*.deb
