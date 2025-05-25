@@ -1,6 +1,5 @@
+build-artifacts
 .debhelper
-hello-world
-hello-debian
 files
-hello-debian.debhelper.log
-hello-debian.substvars
+hello-world
+hello-debian*
