@@ -2,16 +2,11 @@
   "name": "Ubuntu 24.04 Dev Container",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
 
-  // "build": {
-  //   "dockerfile": "Dockerfile"
-  // },
-  
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/git:1": {}
   },
-
-  // "postCreateCommand": ".devcontainer/post-create.sh",
+  
   "postCreateCommand": "sudo apt-get update && sudo apt-get install -y devscripts build-essential debhelper fakeroot",
 
   "customizations": {
