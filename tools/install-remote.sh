@@ -10,3 +10,4 @@ cd build-artifacts
 
 wget -O release.deb $(curl -s https://api.github.com/repos/mdelgert/hello-debian/releases/latest | grep "browser_download_url.*deb" | cut -d '"' -f 4)
 sudo dpkg -i release.deb
+sudo apt-get install -f  # fix missing deps if needed
